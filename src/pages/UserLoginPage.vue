@@ -43,7 +43,6 @@ const onSubmit = async () => {
     userAccount : userAccount.value,
     userPassword : userPassword.value
   })
-  console.log(res,'用户登录');
   if (res.code === 0 && res.data){
     Toast.success('登录成功')
     router.push('/')

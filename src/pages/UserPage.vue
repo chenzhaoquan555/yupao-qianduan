@@ -32,10 +32,10 @@ onMounted(async () => {
   const res = await myAxios.get('/user/current');
   if (res.code === 0) {
     user.value = res.data;
-  } /*else if (res.code === 40100){
+  } else if (res.code === 40100) {
     router.push('/user/login');
     Toast.fail('请登录')
-  }*/else {
+  } else {
     Toast.fail('获取用户失败')
   }
 });

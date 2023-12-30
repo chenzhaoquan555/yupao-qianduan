@@ -53,11 +53,11 @@ const currentPage = async () =>{
     }
   })
       .then(function (response) {
-        /*if (response.code === 40100){
+        if (response.code === 40100) {
           router.push('/user/login')
           Toast('请先登录');
           return ;
-        }*/
+        }
         Toast('获取用户列表成功');
         total.value=response?.data?.pages;
         return response?.data?.records

@@ -2,12 +2,12 @@
 
 import axios, {AxiosInstance} from "axios";
 
+
 const isDev = process.env.NODE_ENV === 'development';
 // 创建实例时配置默认值
 const myAxios:AxiosInstance = axios.create({
-
     // 后端接口地址 这里后期需要考虑到根据不同的环境更换url
-    baseURL: isDev? 'http://localhost:8080/api' :'http://111.230.9.173',
+    baseURL: isDev ? 'http://localhost:8080/api' : 'https://111.230.9.173:8080/api',
     // 跨域请求时发送cookie
     withCredentials: true
 });
@@ -32,10 +32,10 @@ myAxios.interceptors.response.use(function (response) {
     // 2xx 范围内的状态码都会触发该函数。
     console.log('我收到你的相应啦',response)
     //全局响应拦截未登录就跳转到登录页面
-    if (response?.data?.code === 40100){
-        const redirectUrl = window.location.href;
-        window.location.href = `/user/login?redirect=${redirectUrl}`;
-    }
+    /*    if (response?.data?.code === 40100){
+            const redirectUrl = window.location.href;
+            window.location.href = `/user/login?redirect=${redirectUrl}`;
+        }*/
     // 对响应数据做点什么
     return response.data;
 }, function (error) {

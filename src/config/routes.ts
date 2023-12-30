@@ -14,10 +14,9 @@ import UserLoginPage from "../pages/UserLoginPage.vue";
 import TeamAddPage from "../pages/TeamAddPage.vue";
 import TeamUpdatePage from "../pages/TeamUpdatePage.vue";
 
-
 const routes = [
-    {path: "/",component: IndexPage},
-    { path: "/team",name:'找队伍', component: TeamPage },
+    {path: "/:", component: IndexPage},
+    {path: "/team", name: '找队伍', component: TeamPage},
     {path: "/team/add:",name:"创建队伍",component: TeamAddPage},
     {path: "/team/update:", name:'修改队伍',component: TeamUpdatePage},
     {path: "/user", name:'用户主页',component: UserPage},
@@ -28,7 +27,6 @@ const routes = [
     {path: "/user/edit", name:'编辑用户信息',component: UserEditPage},
     {path: "/user/list", name:'用户列表',component: SearchResultPage},
     {path: "/user/login",name:'用户登录', component: UserLoginPage},
-
 ]
 
 export default routes;

@@ -49,6 +49,10 @@ const listTeam = async (val = '', status = 0) => {
       status,
     }
   })
+  if (res?.code === 40100) {
+    router.push('/user/login')
+    Toast('请先登录');
+  }
   if (res?.code === 0) {
     showToast('搜索队伍成功')
     teamList.value = res.data;
