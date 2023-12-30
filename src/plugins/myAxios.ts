@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV === 'development';
 // 创建实例时配置默认值
 const myAxios:AxiosInstance = axios.create({
     // 后端接口地址 这里后期需要考虑到根据不同的环境更换url
-    baseURL: isDev ? 'http://localhost:8080/api' : 'https://111.230.9.173:8080/api',
+    baseURL: isDev ? 'http://localhost:8080/api' : 'http://111.230.9.173:8080/api',
     // 跨域请求时发送cookie
     withCredentials: true
 });
